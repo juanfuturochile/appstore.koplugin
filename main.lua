@@ -1490,6 +1490,15 @@ function AppStore:fetchRemoteVersionForRecord(record)
         end
     end
 
+    -- If we only saw 404/not-found style issues, treat this as "no remote version info"
+    -- instead of a hard error, so single-plugin checks can report gracefully.
+    if last_err then
+        local msg = tostring(last_err)
+        if msg:find("404", 1, true) or msg == _("Remote version not found.") then
+            return nil, remote_repo_ts, nil
+        end
+    end
+
     return nil, remote_repo_ts, last_err or _("Remote version not found.")
 end
 
